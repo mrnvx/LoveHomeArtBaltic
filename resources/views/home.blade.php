@@ -26,8 +26,17 @@
                 <img src="images/logo_love.png" alt="Logo"> <!-- Укажите путь к логотипу -->
             </div>
             <nav class="nav-menu">
-                <a href="#">HOME</a>
-                <a href="#">SHOP</a>
+                    <a href="#">HOME</a>
+                    <div class="dropdown">
+                    <a href="#" class="dropbtn">SHOP</a>
+                    <div class="dropdown-content">
+                    <a href="#">All products</a>
+                    <a href="#">Driftwood</a>
+                    <a href="#">Stones</a>
+                    <a href="#">Clocks</a>
+                    <a href="#">Lamps</a>
+                </div>
+            </div>
                 <a href="#">ABOUT</a>
                 <a href="#">CONTACT</a>
             </nav>
