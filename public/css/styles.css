@@ -298,3 +298,118 @@ body {
     color: #24262b;
     background-color: #fff;
 }
+
+/* Contact */
+
+/* Основной контейнер контактной страницы */
+.contact-page {
+    display: flex;
+    justify-content: center; /* Центрируем контент по горизонтали */
+    gap: 40px; /* Расстояние между колонками */
+    padding: 60px;
+}
+
+/* Левая колонка с контактной информацией */
+.contact-info {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px; /* Расстояние между элементами */
+}
+
+/* Стиль для карты */
+.contact-info iframe {
+    width: 600px; /* Установка ширины на 100% для адаптации к контейнеру */
+    height: 200px; /* Меньшая высота карты */
+    border-radius: 8px; /* Закругление углов карты */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Добавляем тень к карте */
+}
+
+/* Правая колонка с формой */
+.contact-form {
+    width: 420px; /* Более узкая ширина формы для улучшения внешнего вида */
+    background: #f9f9f9;
+    padding: 20px; /* Меньшее внутреннее расстояние */
+    border-radius: 8px; /* Закругленные углы */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Мягкая тень */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Заголовок формы */
+.contact-form h2 {
+    color: #0056a3;
+    font-size: 1.2em; /* Меньший размер заголовка */
+    margin-bottom: 10px;
+}
+
+/* Описание под заголовком */
+.contact-form p {
+    font-size: 0.9em;
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px; /* Уменьшенное расстояние под описанием */
+}
+
+/* Поля формы */
+.contact-form label {
+    width: 100%;
+    font-size: 0.9em; /* Уменьшенный размер шрифта для меток */
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+/* Поля ввода и текстовое поле */
+.contact-form input,
+.contact-form textarea {
+    width: calc(100% - 10px); /* Выровнено по краю формы */
+    padding: 8px; /* Меньшее внутреннее расстояние */
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    font-size: 0.9em; /* Уменьшенный размер текста */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05); /* Внутренняя тень */
+}
+
+/* Специальный стиль для текстового поля "Tava ziņa" */
+.contact-form textarea {
+    height: 120px; /* Увеличенная высота текстового поля для сообщения */
+    resize: vertical; /* Позволяет пользователю изменять размер */
+}
+
+/* Кнопка отправки */
+.contact-form .submit-btn {
+    width: 100%; /* Ширина кнопки, выровненная по краям формы */
+    background-color: #d9a4a4;
+    color: white;
+    padding: 10px 16px; /* Меньше отступов */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9em; /* Уменьшенный размер текста */
+    transition: background-color 0.3s;
+    margin-top: 10px; /* Дополнительное расстояние сверху */
+}
+
+.contact-form .submit-btn:hover {
+    background-color: #e04e4e; /* Темнее на наведение */
+}
+
+/* Стили для социальной медиа секции */
+.social-media {
+    display: flex;
+    gap: 20px;
+}
+
+.social-media a {
+    font-size: 1.2em;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #d9a4a4; /* Цвет при наведении */
+}
