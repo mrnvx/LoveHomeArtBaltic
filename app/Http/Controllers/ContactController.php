@@ -16,22 +16,26 @@ class ContactController extends Controller
 
     function post_message(Request $request){
 
-            $request->validate([
-                'email' => 'required|email'
-            ]);
+        $request->validate([
+            'email' => 'required|email'
+        ]);
 
-            $data = [
-                'name' => $request->name,
-                'email' => $request->email,
-                'phone' => $request->phone,
-                'subject' => $request->subject,
-                'message' => $request->message
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'subject' => $request->subject,
+            'message' => $request->message
 
 
-            ];
+        ];
 
-            Mail::to('kipdaniks@gmail.com')->send(new ContactFormMail($data));
+        Mail::to('kipdaniks@gmail.com')->send(new ContactFormMail($data));
 
-            return back()->with('msg', 'Thanks for contacting us. Your message has been sent successfully.');
+        return redirect()->back()->with('msg', 'Thanks for contacting us. Your message has been sent successfully.');
+    }
+
+    public function test_view(){
+        return view('contact_mail');
     }
 }

@@ -30,7 +30,7 @@
             <p class="alert alert-succes">{{Session::get('msg')}}</p>
         @endif
 
-         <form name="contact_form" action="/post-message" method="POST">
+         <form name="contact_form" action="{{ route('contact.post_message')}}" method="POST">
             @csrf
             <label for="name">Full name</label>
             <input type="text" name="name" id="name" required>

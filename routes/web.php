@@ -9,4 +9,6 @@ Route::get('/', function () {
 
 Route::resource('contact', ContactController::class);
 
-Route::post('/contact', [ContactController::class, 'post_message']);
+
+Route::get('/test-view', [ContactController::class, 'test_view']);
+Route::post('/contact', [ContactController::class, 'post_message'])->name('contact.post_message');

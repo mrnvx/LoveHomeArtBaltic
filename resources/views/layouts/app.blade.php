@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'My Website')</title>
-    <!-- Подключите стили -->
+    <title>@yield('title', 'LoveHomeArtBaltic')</title>
+
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <!-- Подключите Font Awesome, если иконки нужны -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -21,7 +20,7 @@
         </div>
         <div class="main-header">
             <div class="logo">
-                <img src="images/logo_love.png" alt="Logo"> <!-- Укажите путь к логотипу -->
+                <img src="images/logo_love.png" alt="Logo"> 
             </div>
             <nav class="nav-menu">
                     <a href="#">HOME</a>
@@ -92,7 +91,6 @@
         </div>
     </footer>
 
-    <!-- Подключение скриптов -->
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
