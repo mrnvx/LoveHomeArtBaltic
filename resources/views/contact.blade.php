@@ -27,7 +27,9 @@
         <p>Contact us if you have any questions, suggestions, or want to learn more about the product!</p>
         
         @if(Session::has('msg'))
-            <p class="alert alert-succes">{{Session::get('msg')}}</p>
+            <div class="alert">
+                {{Session::get('msg')}}
+            </div>
         @endif
 
          <form name="contact_form" action="{{ route('contact.post_message')}}" method="POST">
