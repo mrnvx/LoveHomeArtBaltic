@@ -36,7 +36,7 @@
                 </div>
             </div>
                 <a href="#">ABOUT</a>
-                <a href="#">CONTACT</a>
+                <a href="{{ route('contact.index') }}">CONTACT</a>
             </nav>
             <div class="icons">
                 <a href="#"><img src="images/search.svg" alt="Search"></a>

@@ -26,33 +26,25 @@
         <h2>Send your message!</h2>
         <p>Contact us if you have any questions, suggestions, or want to learn more about the product!</p>
         
-        <!-- Отображение сообщений об успехе/ошибках -->
-        @if(session('success'))
-            <div class="alert alert-success">{{ session('success') }}</div>
+        @if(Session::has('msg'))
+            <p class="alert alert-succes">{{Session::get('msg')}}</p>
         @endif
 
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-
-         <form action="#" method="POST">
+         <form name="contact_form" action="/post-message" method="POST">
             @csrf
-            <label for="name">Tavs vārds</label>
+            <label for="name">Full name</label>
             <input type="text" name="name" id="name" required>
 
-            <label for="email">Tavs e-pasts</label>
+            <label for="email">Email Address</label>
             <input type="email" name="email" id="email" required>
 
-            <label for="phone">Tavs tālrunis</label>
+            <label for="phone">Phone</label>
             <input type="text" name="phone" id="phone">
 
-            <label for="message">Tava ziņa</label>
+            <label for="phone">Subject</label>
+            <input type="text" name="subject" id="subject">
+
+            <label for="message">Write a message</label>
             <textarea name="message" id="message" required></textarea>
 
             <button type="submit" class="submit-btn">Nosūti ziņu</button>
