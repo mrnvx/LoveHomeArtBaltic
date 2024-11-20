@@ -23,7 +23,7 @@
                 <img src="images/logo_love.png" alt="Logo"> 
             </div>
             <nav class="nav-menu">
-                    <a href="#">HOME</a>
+                    <a href="/home">HOME</a>
                     <div class="dropdown">
                     <a href="#" class="dropbtn">SHOP</a>
                     <div class="dropdown-content">
@@ -34,7 +34,7 @@
                     <a href="#">Lamps</a>
                 </div>
             </div>
-                <a href="#">ABOUT</a>
+                <a href="/about">ABOUT</a>
                 <a href="{{ route('contact.index') }}">CONTACT</a>
             </nav>
             <div class="icons">

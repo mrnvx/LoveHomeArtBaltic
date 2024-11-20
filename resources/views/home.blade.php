@@ -16,9 +16,9 @@
 
  @section('content')
 <main>
-    <!-- Hero Section -->
+
     <section class="hero">
-        <img src="images/background.jpg" alt="Background" class="hero-background"> <!-- Укажите путь к фону -->
+        <img src="images/background.jpg" alt="Background" class="hero-background">
         <div class="hero-content">
             <p class="hero-title">Driftwood Marketplace</p>
             <p class="hero-text">Welcome to my store! On this site you will find everything made by hand, with a lot of dedication and above all with a lot of love.</p>
@@ -26,13 +26,13 @@
         </div>
     </section>
 
-    <!-- Promo Section -->
+
     <section class="promo">
         <p class="promo-text">SHOP ADDITIONAL ITEMS ONLY AVAILABLE ON ETSY</p>
         <a href="https://www.etsy.com/shop/LoveHomeArtBaltic" class="promo-button">SHOP</a>
     </section>
 
-    <!-- Welcome Section -->
+
     <section class="welcome">
         <h2>Welcome to LoveHomeArtBaltic!</h2>
         <p>Welcome to LoveHomeArtBaltic, where dreams come to life in driftwood and stones! Each piece of driftwood and stone has its own story, and we are very happy to become a part of it and give it new life. All this can be done thanks to your creativity. Let's make the world brighter and more beautiful!</p>
