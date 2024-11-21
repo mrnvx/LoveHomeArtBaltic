@@ -39,7 +39,7 @@
             </nav>
             <div class="icons">
                 <a href="#"><img src="images/search.svg" alt="Search"></a>
-                <a href="#"><img src="images/user.svg" alt="User"></a>
+                <a id="user-icon" href="#"><img src="images/user.svg" alt="User"></a>
                 <a href="#"><img src="images/cart.svg" alt="Cart" class="cart-icon"></a>
             </div>
         </div>
