@@ -8,20 +8,28 @@
 <div class="login-page">
 
 <h1>Login</h1>
-    <form action="/login" method="POST">
-        @csrf
-        <label>Email:</label>
-        <input type="email" name="email" required>
-        <br>
-        <label>Password:</label>
-        <input type="password" name="password" required>
-        <br>
-        <a href="#">Forgot your password?</a>
-        <br>
-        <button type="submit">Login</button>
-        <br>
-        <a href="/register">Create account</a>
-    </form>
+<form method="POST" action="{{ route('login') }}">
+    @csrf
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" class="form-control" value="{{ old('email') }}">
+        @error('email')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" class="form-control">
+        @error('password')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>
+<p>Don't have an account? <a href="{{ route('register') }}">Register here</a></p>
     
     
 </div>

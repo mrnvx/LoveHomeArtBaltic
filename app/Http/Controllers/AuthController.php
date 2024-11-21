@@ -2,59 +2,79 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
-    // Показать форму входа
-    public function showLogin()
-    {
-        return view('auth.login');
-    }
-
-    // Авторизация пользователя
-    public function login(Request $request)
-    {
-        $credentials = $request->only('email', 'password');
-
-        if (Auth::attempt($credentials)) {
-            return redirect()->intended(route('profile'));
-        }
-
-        return back()->withErrors(['email' => 'Invalid credentials.']);
-    }
-
-    // Показать форму регистрации
     public function showRegister()
     {
         return view('auth.register');
     }
 
-    // Регистрация пользователя
     public function register(Request $request)
     {
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed',
+            'password' => 'required|string|min:8|confirmed', // password confirmation
         ]);
 
-        User::create([
+        if ($validator->fails()) {
+            return redirect()->back()
+                             ->withErrors($validator)
+                             ->withInput(); 
+        }
+
+
+        $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => bcrypt($request->password),
+            'password' => Hash::make($request->password),
         ]);
 
-        return redirect()->route('login')->with('success', 'Registration successful. Please log in.');
+
+        Auth::login($user);
+
+      
+        return redirect("/profile");
     }
 
-    // Выход из системы
+
+    public function showLogin()
+    {
+        return view('auth.login');
+    }
+
+ 
+    public function login(Request $request)
+    {
+    
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|string|min:8',
+        ]);
+
+    
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+           
+            return redirect()->intended('home');
+        }
+
+    
+        return back()->withErrors([
+            'email' => 'The provided credentials are incorrect.',
+        ]);
+    }
+
+
     public function logout()
     {
         Auth::logout();
-        return redirect()->route('login');
+        return redirect('home');
     }
 }
-
