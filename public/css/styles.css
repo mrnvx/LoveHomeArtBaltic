@@ -44,7 +44,6 @@ body {
     color: #d9a4a4;
 }
 
-/* Основная часть шапки */
 .main-header {
     display: flex;
     align-items: center;
@@ -52,7 +51,7 @@ body {
     padding: 10px 0;
 }
 
-/* Логотип */
+/* logo*/
 .logo img {
     height: 60px;
 }
@@ -82,7 +81,7 @@ body {
     text-transform: none;
 }
 
-/* Навигационное меню */
+/* Navigation */
 .nav-menu {
     display: flex;
     gap: 20px;
@@ -405,9 +404,9 @@ body {
     border: 1px solid transparent;
     border-radius: 4px;
     font-size: 16px;
-    color: #3c763d; /* Text color */
-    background-color: #dff0d8; /* Background color */
-    border-color: #d6e9c6; /* Border color */
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
 }
 
 /* About */
@@ -468,4 +467,130 @@ body {
     font-size: 1.1rem;
     margin: 0 auto;
     max-width: 800px;
+}
+
+/* Profile */
+
+/* Общий стиль контейнера */
+.profile-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* Заголовок */
+.profile-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Сообщение об успехе */
+.success-message {
+    padding: 10px;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Ошибки */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Поля формы */
+.profile-form .form-group {
+    margin-bottom: 15px;
+}
+
+.profile-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.verify-password-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.profile-form input[type="text"],
+.profile-form input[type="email"],
+.verify-password-form input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Кнопки */
+.btn-update,
+.btn-delete,
+.btn-logout {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s ease;
+}
+
+.verify-password-form .btn-update,
+.form-group {
+    margin-top: 15px;
+}
+
+.btn-update {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    background-color: #d9a4a4;
+    color: white;
+}
+
+.btn-update:hover {
+    background-color: #f38787;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #a71d2a;
+}
+
+.btn-logout {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #ff0000;
+    background-color: transparent;
+    border: 1px solid #ff0000;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-logout:hover {
+    background-color: #a53e4831;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
 }
