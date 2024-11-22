@@ -471,7 +471,6 @@ body {
 
 /* Profile */
 
-/* Общий стиль контейнера */
 .profile-container {
     max-width: 600px;
     margin: 40px auto;
@@ -479,16 +478,19 @@ body {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Заголовок */
+.profile-container h3 {
+    color: #000000d5;
+}
+
 .profile-container h1 {
     text-align: center;
     margin-bottom: 20px;
     font-size: 24px;
 }
 
-/* Сообщение об успехе */
 .success-message {
     padding: 10px;
     background-color: #d4edda;
@@ -499,14 +501,12 @@ body {
     text-align: center;
 }
 
-/* Ошибки */
 .error-message {
     color: red;
     font-size: 14px;
     margin-top: 5px;
 }
 
-/* Поля формы */
 .profile-form .form-group {
     margin-bottom: 15px;
 }
@@ -533,10 +533,10 @@ body {
     box-sizing: border-box;
 }
 
-/* Кнопки */
 .btn-update,
 .btn-delete,
 .btn-logout {
+    font-family: "Poppins", sans-serif;
     display: inline-block;
     padding: 10px 15px;
     font-size: 16px;
@@ -592,5 +592,151 @@ body {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    margin-top: 20px;
+}
+
+/* Login */
+
+.login-block {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+.login-container {
+    display: flex;
+    width: 800px;
+    height: 500px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Login left */
+.login-left {
+    width: 50%;
+    background-color: #fafafa;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    color: #333;
+}
+
+.login-left h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #302b63;
+}
+
+.login-left .form-group {
+    margin-bottom: 20px;
+}
+
+.login-left label {
+    font-size: 16px;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.login-left input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.login-left input:focus {
+    border-color: #302b63;
+    outline: none;
+}
+
+.login-btn {
+    font-family: "Poppins", sans-serif;
+    width: 30%;
+    padding: 10px;
+    margin: 0 auto;
+    border: none;
+    background-color: #d9a4a4;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #f38787;
+}
+
+.login-left p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.login-left a {
+    color: #302b63;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Login right */
+
+.login-right {
+    width: 50%;
+    background: linear-gradient(to bottom right, #d6bebe, #d9a4a4);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.login-right h2 {
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.login-right p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+.btn-signup {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #d9a4a4;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-bottom: 20px;
+}
+
+.btn-signup:hover {
+    background-color: #f0f0f0;
+}
+
+.image-container img {
+    max-width: 100%;
+    max-height: 150px;
     margin-top: 20px;
 }

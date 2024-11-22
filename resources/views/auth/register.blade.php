@@ -5,7 +5,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-<div class="register-page">
+
+<div class="register-block">
+<div class="register-container">
 
 <h1>Register</h1>
 <form method="POST" action="{{ route('register') }}">
@@ -46,6 +48,7 @@
     <button type="submit" class="btn btn-primary">Register</button>
 </form>
 
+    </div>
 </div>
 
 @endsection
