@@ -7,7 +7,18 @@
 
 
 <div class="register-block">
+
 <div class="register-container">
+
+<div class="register-left">
+    <h2>Here you can register own account!</h2>  
+        <div class="image-container">
+            <img src="{{ asset('images/registerimage.jpg') }}" alt="Driftwood">
+        </div>
+    </div>
+
+<div class="register-right">
+
 
 <h1>Register</h1>
 <form method="POST" action="{{ route('register') }}">
@@ -45,9 +56,8 @@
         @enderror
     </div>
 
-    <button type="submit" class="btn btn-primary">Register</button>
+    <button type="submit" class="register-btn">Register</button>
 </form>
-
     </div>
 </div>
 
