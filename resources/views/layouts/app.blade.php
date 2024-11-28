@@ -35,7 +35,11 @@
                 </div>
             </div>
                 <a href="/about">ABOUT</a>
-                <a href="{{ route('contact.index') }}">CONTACT</a>
+                <a href="{{ route('contact.index') }}">contact</a>
+                @if(auth()->check() && auth()->user()->hasRole('admin'))
+                <a href="/admin/orders">Orders</a>
+                @endif
+
             </nav>
             <div class="icons">
                 <a href="#"><img src="images/search.svg" alt="Search"></a>

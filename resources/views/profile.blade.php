@@ -12,9 +12,20 @@
         <div class="success-message">{{ session('success') }}</div>
     @endif
 
-    <form method="POST" action="{{ route('profile.update') }}" class="profile-form">
+    <form method="POST" action="{{ route('profile.update') }}" class="profile-form" enctype="multipart/form-data">
         @csrf
         <h3>You can edit your profile information here</h3>
+
+        <div class="form-group">
+        <label for="profile_picture">Profile Picture:</label>
+        @if($user->profile_picture)
+        <p>Current photo: <img src="{{ asset('storage/' . $user->profile_picture) }}" alt="Profile Picture" width="100"></p>
+        @endif
+        <input type="file" name="profile_picture" id="profile_picture">
+        @error('profile_picture')
+            <div class="error-message">{{ $message }}</div>
+        @enderror
+    </div>
 
         <div class="form-group">
             <label for="name">Name:</label>

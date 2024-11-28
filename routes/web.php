@@ -38,6 +38,6 @@ Route::get('/check-auth', function () {
     return response()->json(['isLoggedIn' => auth()->check()]);
 });
 
-Route::middleware(['auth', 'role:admin'])->get('/admin/orders', function () {
-    return view('admin.orders');
+Route::get('/admin/orders', function () {
+    return view('admin/orders');
 });
