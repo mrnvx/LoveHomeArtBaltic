@@ -37,3 +37,7 @@ Route::post('/contact', [ContactController::class, 'post_message'])->name('conta
 Route::get('/check-auth', function () {
     return response()->json(['isLoggedIn' => auth()->check()]);
 });
+
+Route::middleware(['auth', 'role:admin'])->get('/admin/orders', function () {
+    return view('admin.orders');
+});

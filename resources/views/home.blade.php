@@ -16,7 +16,12 @@
 
  @section('content')
 <main>
-
+    <div class="welcome-message">
+         @if(auth()->check() && auth()->user()->hasRole('admin'))
+        <p>Welcome, Admin! You have access to additional features.</p>
+        @endif
+    </div>
+    
     <section class="hero">
         <img src="images/background.jpg" alt="Background" class="hero-background">
         <div class="hero-content">
