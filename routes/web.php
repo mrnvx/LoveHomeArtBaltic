@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
@@ -40,4 +42,15 @@ Route::get('/check-auth', function () {
 
 Route::get('/admin/orders', function () {
     return view('admin/orders');
+});
+
+Route::get('/shop', [ProductController::class, 'index'])->name('shop.index');
+Route::get('/shop/{product}', [ProductController::class, 'show'])->name('shop.show');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin/products/create', [AdminController::class, 'create'])->name('admin.products.create');
+    Route::post('/admin/products', [AdminController::class, 'store'])->name('admin.products.store');
+    Route::get('/admin/products/{product}/edit', [AdminController::class, 'edit'])->name('admin.products.edit');
+    Route::put('/admin/products/{product}', [AdminController::class, 'update'])->name('admin.products.update');
+    Route::delete('/admin/products/{product}', [AdminController::class, 'destroy'])->name('admin.products.destroy');
 });

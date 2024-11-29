@@ -20,14 +20,14 @@
         </div>
         <div class="main-header">
             <div class="logo">
-                <img src="images/logo_love.png" alt="Logo"> 
+                <a href="/home"><img src="images/logo_love.png" alt="Logo"></a>
             </div>
             <nav class="nav-menu">
                     <a href="/home">HOME</a>
                     <div class="dropdown">
                     <a href="#" class="dropbtn">SHOP</a>
                     <div class="dropdown-content">
-                    <a href="#">All products</a>
+                    <a href="/shop">All products</a>
                     <a href="#">Driftwood</a>
                     <a href="#">Stones</a>
                     <a href="#">Clocks</a>
