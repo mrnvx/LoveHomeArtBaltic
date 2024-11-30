@@ -42,7 +42,18 @@
 
             </nav>
             <div class="icons">
-                <a href="#"><img src="images/search.svg" alt="Search"></a>
+        <div class="search-container">
+            <form action="{{ route('shop.search') }}" method="GET" class="search-form">
+                    <input 
+                        type="text" 
+                        name="query" 
+                        placeholder="Search products..." 
+                        value="{{ request('query') }}" 
+                        class="search-input"
+                    >
+                    <img src="images/search.svg'" alt="Search" class="search-icon">
+            </form>
+         </div>
                 <a id="user-icon" href="#"><img src="images/user.svg" alt="User"></a>
                 <a href="#"><img src="images/cart.svg" alt="Cart" class="cart-icon"></a>
             </div>

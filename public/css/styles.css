@@ -844,3 +844,43 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.349);
 }
+
+/* Search */
+
+.search-container {
+    position: relative;
+    display: inline-block;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.search-input {
+    width: 0;
+    opacity: 0;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.search-container:hover .search-input {
+    width: 200px;
+    opacity: 1;
+    margin-right: 10px;
+}
+
+.search-container:hover .search-icon {
+    transform: scale(1.1);
+}

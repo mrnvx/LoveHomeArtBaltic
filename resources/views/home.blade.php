@@ -26,7 +26,7 @@
         <div class="hero-content">
             <p class="hero-title">Driftwood Marketplace</p>
             <p class="hero-text">Welcome to my store! On this site you will find everything made by hand, with a lot of dedication and above all with a lot of love.</p>
-            <button class="shop-button">SHOP NOW</button>
+            <a href="{{ route('shop.index')}}" class="shop-button">SHOP NOW</a>
         </div>
     </section>
 

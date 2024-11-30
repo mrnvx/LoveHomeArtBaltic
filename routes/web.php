@@ -54,3 +54,5 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/admin/products/{product}', [AdminController::class, 'update'])->name('admin.products.update');
     Route::delete('/admin/products/{product}', [AdminController::class, 'destroy'])->name('admin.products.destroy');
 });
+
+Route::get('/search', [ProductController::class, 'search'])->name('shop.search');
