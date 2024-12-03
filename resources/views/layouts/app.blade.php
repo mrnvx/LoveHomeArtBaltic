@@ -55,7 +55,7 @@
             </form>
          </div>
                 <a id="user-icon" href="#"><img src="images/user.svg" alt="User"></a>
-                <a href="#"><img src="images/cart.svg" alt="Cart" class="cart-icon"></a>
+                <a href="{{ route('cart.index') }}"><img src="images/cart.svg" alt="Cart" class="cart-icon"></a>
             </div>
         </div>
     </header>

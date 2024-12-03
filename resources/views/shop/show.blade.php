@@ -12,9 +12,12 @@
     <p>{{ $product->description }}</p>
     <p><strong>Price:</strong> ${{ number_format($product->price, 2) }}</p>
 
-    <form action="#" method="POST">
-        @csrf
-        <button type="submit">Add to Cart</button>
-    </form>
+    <form action="{{ route('cart.store') }}" method="POST">
+    @csrf
+    <input type="hidden" name="product_id" value="{{ $product->id }}">
+    <input type="number" name="quantity" value="1" min="1">
+    <button type="submit">Add to Cart</button>
+</form>
+
 </div>
 @endsection

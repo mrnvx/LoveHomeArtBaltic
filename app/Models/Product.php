@@ -10,4 +10,9 @@ class Product extends Model
     use HasFactory;
 
     protected $fillable = ['name', 'description', 'price', 'image'];
+
+    public function carts()
+    {
+        return $this->hasMany(Cart::class);
+    }
 }
