@@ -6,6 +6,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/home', function () {
@@ -41,9 +43,8 @@ Route::get('/check-auth', function () {
     return response()->json(['isLoggedIn' => auth()->check()]);
 });
 
-Route::get('/admin/orders', function () {
-    return view('admin/orders');
-});
+
+
 
 Route::get('/shop', [ProductController::class, 'index'])->name('shop.index');
 Route::get('/shop/{product}', [ProductController::class, 'show'])->name('shop.show');
@@ -54,7 +55,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/products/{product}/edit', [AdminController::class, 'edit'])->name('admin.products.edit');
     Route::put('/admin/products/{product}', [AdminController::class, 'update'])->name('admin.products.update');
     Route::delete('/admin/products/{product}', [AdminController::class, 'destroy'])->name('admin.products.destroy');
+    Route::get('/admin/orders', [OrderController::class, 'index'])->name('admin.orders.index');
 });
+
+
 
 Route::get('/search', [ProductController::class, 'search'])->name('shop.search');
 
@@ -65,3 +69,5 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/cart/clear', [CartController::class, 'clear'])->name('cart.clear'); 
 });
 
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');

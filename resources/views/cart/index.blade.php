@@ -41,6 +41,11 @@
                                     <button type="submit">Remove</button>
                                 </form>
                         </td>
+                        @if(!$cartItems->isEmpty())
+    <form action="{{ route('checkout.index') }}" method="GET">
+        <button type="submit">Proceed to Checkout</button>
+    </form>
+@endif
                     </tr>
                 @endforeach
             </tbody>
