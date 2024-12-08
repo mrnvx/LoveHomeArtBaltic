@@ -19,5 +19,33 @@
     <button type="submit">Add to Cart</button>
 </form>
 
+<h2>Reviews:</h2>
+@foreach($product->reviews as $review)
+    <div>
+        <strong>{{ $review->user->name }}</strong> rated {{ $review->rating }} Stars
+        <p>{{ $review->comment }}</p>
+        <small>Posted on {{ $review->created_at->format('d M Y') }}</small>
+    </div>
+@endforeach
+
+
+@if(auth()->check())
+    <form action="{{ route('reviews.store', $product->id) }}" method="POST">
+        @csrf
+        <label for="rating">Rating:</label>
+        <select name="rating" id="rating" class="rating" required>
+            @for ($i = 1; $i <= 5; $i++)
+                <option value="{{ $i }}">{{ $i }} Star{{ $i > 1 ? 's' : '' }}</option>
+            @endfor
+        </select>
+
+        <label for="comment">Comment:</label>
+        <textarea name="comment" id="comment" rows="3" required></textarea>
+
+        <button type="submit">Submit Review</button>
+    </form>
+@endif
+
+
 </div>
 @endsection

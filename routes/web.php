@@ -8,6 +8,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ReviewController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/home', function () {
@@ -43,9 +44,6 @@ Route::get('/check-auth', function () {
     return response()->json(['isLoggedIn' => auth()->check()]);
 });
 
-
-
-
 Route::get('/shop', [ProductController::class, 'index'])->name('shop.index');
 Route::get('/shop/{product}', [ProductController::class, 'show'])->name('shop.show');
 
@@ -58,8 +56,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/orders', [OrderController::class, 'index'])->name('admin.orders.index');
 });
 
-
-
 Route::get('/search', [ProductController::class, 'search'])->name('shop.search');
 
 Route::middleware(['auth'])->group(function () {
@@ -71,3 +67,5 @@ Route::middleware(['auth'])->group(function () {
 
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
 Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
+
+Route::post('/products/{product}/reviews', [ReviewController::class, 'store'])->name('reviews.store');
