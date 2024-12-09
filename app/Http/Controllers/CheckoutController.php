@@ -30,7 +30,7 @@ class CheckoutController extends Controller
             return redirect()->route('cart.index')->with('error', 'Your cart is empty!');
         }
 
-        // Создаем заказ
+        // Create order
         $order = Order::create([
             'user_id' => auth()->id(),
             'address' => $request->address,
@@ -38,7 +38,7 @@ class CheckoutController extends Controller
             'total_price' => $cartItems->sum(fn ($item) => $item->product->price * $item->quantity),
         ]);
 
-        // Сохраняем товары заказа
+        // Save order items
         foreach ($cartItems as $cartItem) {
             OrderItem::create([
                 'order_id' => $order->id,
@@ -47,7 +47,7 @@ class CheckoutController extends Controller
                 'price' => $cartItem->product->price,
             ]);
 
-            // Удаляем из корзины
+            // delete from cart
             $cartItem->delete();
         }
 
