@@ -27,6 +27,15 @@
             <td>{{ $order->address }}</td>
             <td>{{ $order->payment_method }}</td>
             <td>{{ $order->created_at }}</td>
+            <form action="{{ route('admin.orders.update', $order->id) }}" method="POST">
+            @csrf
+            <select name="status">
+                <option value="apstrādē" {{ $order->status == 'apstrādē' ? 'selected' : '' }}>Apstrādē</option>
+                <option value="nosūtīts" {{ $order->status == 'nosūtīts' ? 'selected' : '' }}>Nosūtīts</option>
+                <option value="piegādāts" {{ $order->status == 'piegādāts' ? 'selected' : '' }}>Piegādāts</option>
+            </select>
+            <button type="submit">Update</button>
+        </form>
         </tr>
         @endforeach
     </tbody>

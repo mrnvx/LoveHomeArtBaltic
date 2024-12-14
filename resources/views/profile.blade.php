@@ -82,6 +82,10 @@
     </form>
 
     <div class="form-container">
+    <a href="{{ route('orders') }}" class="btn-update">View My Orders</a>
+    </div>
+
+    <div class="form-container">
         <form action="/logout" method="POST" class="logout-form">
             @csrf
             <button type="submit" class="btn-logout">Logout</button>

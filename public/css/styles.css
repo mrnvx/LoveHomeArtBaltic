@@ -558,6 +558,7 @@ body {
     text-align: center;
     background-color: #d9a4a4;
     color: white;
+    text-decoration: none;
 }
 
 .btn-update:hover {

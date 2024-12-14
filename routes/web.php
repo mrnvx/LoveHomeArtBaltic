@@ -33,6 +33,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/profile/verify-password', [ProfileController::class, 'verifyPassword'])->name('profile.verify-password');
     Route::post('/profile/update-password', [ProfileController::class, 'updatePassword'])->name('profile.update-password');
     Route::post('/profile/delete', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/orders', [OrderController::class, 'userOrders'])->name('orders');
+
 });
 
 Route::resource('contact', ContactController::class);
@@ -54,6 +56,8 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/admin/products/{product}', [AdminController::class, 'update'])->name('admin.products.update');
     Route::delete('/admin/products/{product}', [AdminController::class, 'destroy'])->name('admin.products.destroy');
     Route::get('/admin/orders', [OrderController::class, 'index'])->name('admin.orders.index');
+    Route::post('/admin/orders/{id}/status', [OrderController::class, 'updateStatus'])->name('admin.orders.update');
+
 });
 
 Route::get('/search', [ProductController::class, 'search'])->name('shop.search');
@@ -69,3 +73,5 @@ Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.in
 Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
 
 Route::post('/products/{product}/reviews', [ReviewController::class, 'store'])->name('reviews.store');
+
+
