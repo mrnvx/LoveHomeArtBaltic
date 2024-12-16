@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactFormMail;
-use GuzzleHttp\Psr7\Exception\MalformedUriException;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller

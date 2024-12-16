@@ -37,7 +37,7 @@ class AdminController extends Controller
         return view('admin.products.edit', compact('product'));
     }
 
-    // Обновление продукта
+
     public function update(Request $request, Product $product)
     {
         $request->validate([
@@ -61,7 +61,7 @@ class AdminController extends Controller
         return redirect()->route('shop.index');
     }
 
-    // Удаление продукта
+
     public function destroy(Product $product)
     {
         if ($product->image) {

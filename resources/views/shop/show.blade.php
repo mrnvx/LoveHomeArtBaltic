@@ -8,14 +8,13 @@
 
 <div class="show-container">
     <div class="product-page">
-        <!-- Левая часть с изображением -->
+
         <div class="product-left">
             <div class="product-image">
                 <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
             </div>
         </div>
 
-        <!-- Правая часть с информацией -->
         <div class="product-right">
             <div class="product-info">
                 <h1 class="product-title">{{ $product->name }}</h1>
@@ -42,7 +41,6 @@
         </div>
     </div>
 
-    <!-- Секция с отзывами -->
     <div class="reviews-section">
         <h2>Reviews:</h2>
         @foreach($product->reviews as $review)

@@ -49,7 +49,7 @@
             <label for="message">Write a message</label>
             <textarea name="message" id="message" required></textarea>
 
-            <button type="submit" class="submit-btn">Nosūti ziņu</button>
+            <button type="submit" class="submit-btn">Send message</button>
         </form>
     </div>
 </div>

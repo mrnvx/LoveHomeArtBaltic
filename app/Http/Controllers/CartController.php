@@ -10,41 +10,39 @@ class CartController extends Controller
 {
     public function index()
     {
-        // Получаем товары, добавленные текущим авторизованным пользователем
+        
         $cartItems = Cart::where('user_id', auth()->id())->with('product')->get();
 
         return view('cart.index', compact('cartItems'));
     }
 
-    /**
-     * Добавление продукта в корзину.
-     */
+    
     public function store(Request $request)
 {
     
-    // Валидация входящих данных
+    
     $validated = $request->validate([
-        'product_id' => 'required|exists:products,id', // Проверка, что продукт существует
-        'quantity' => 'required|integer|min:1',       // Проверка количества
+        'product_id' => 'required|exists:products,id', 
+        'quantity' => 'required|integer|min:1',       
     ]);
 
-    // Проверяем авторизацию пользователя
+    
     if (!auth()->check()) {
         return redirect()->route('login')->with('error', 'Please login to add products to the cart.');
     }
 
-    // Проверяем, существует ли уже запись для этого продукта в корзине
+    // parbauda vai ir jau groza
     $cartItem = Cart::where('user_id', auth()->id())
                     ->where('product_id', $validated['product_id'])
                     ->first();
 
     if ($cartItem) {
-        // Если продукт уже есть в корзине, обновляем количество
+        // ja ir pieliek klat 
         $cartItem->update([
             'quantity' => $cartItem->quantity + $validated['quantity'],
         ]);
     } else {
-        // Если продукта нет, добавляем его в корзину
+        
         Cart::create([
             'user_id' => auth()->id(),
             'product_id' => $validated['product_id'],
@@ -55,12 +53,10 @@ class CartController extends Controller
     return redirect()->route('cart.index')->with('success', 'Product added to cart!');
 }
 
-    /**
-     * Удаление продукта из корзины.
-     */
+  
     public function destroy($id)
     {
-        $cartItem = Cart::where('user_id', auth()->id())->findOrFail($id); // Удаляем только из корзины текущего пользователя
+        $cartItem = Cart::where('user_id', auth()->id())->findOrFail($id); 
         $cartItem->delete();
 
         return redirect()->route('cart.index')->with('success', 'Product removed from cart!');
