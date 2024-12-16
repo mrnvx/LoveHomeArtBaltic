@@ -6,46 +6,71 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
-<div class="product-details">
-    <h1>{{ $product->name }}</h1>
-    <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
-    <p>{{ $product->description }}</p>
-    <p><strong>Price:</strong> ${{ number_format($product->price, 2) }}</p>
+<div class="show-container">
+    <div class="product-page">
+        <!-- Левая часть с изображением -->
+        <div class="product-left">
+            <div class="product-image">
+                <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
+            </div>
+        </div>
 
-    <form action="{{ route('cart.store') }}" method="POST">
-    @csrf
-    <input type="hidden" name="product_id" value="{{ $product->id }}">
-    <input type="number" name="quantity" value="1" min="1">
-    <button type="submit">Add to Cart</button>
-</form>
+        <!-- Правая часть с информацией -->
+        <div class="product-right">
+            <div class="product-info">
+                <h1 class="product-title">{{ $product->name }}</h1>
+                <p class="product-description"><strong>Description: </strong>{{ $product->description }}</p>
+                <p class="product-description"><strong>Delivery:</strong>
+                    The goods are ready to be shipped from Latvia within 1-2 business days.
+                        All orders are carefully packed, have a tracking number and are easy to track within the EU: 17track.net or track-trace.com/post.
+                    USA: USPS.com.
+                </p>
+                <p class="product-price"><strong>Price:</strong> ${{ number_format($product->price, 2) }}</p>
 
-<h2>Reviews:</h2>
-@foreach($product->reviews as $review)
-    <div>
-        <strong>{{ $review->user->name }}</strong> rated {{ $review->rating }} Stars
-        <p>{{ $review->comment }}</p>
-        <small>Posted on {{ $review->created_at->format('d M Y') }}</small>
+                
+
+                <form action="{{ route('cart.store') }}" method="POST" class="add-to-cart-form">
+                    @csrf
+                    <input type="hidden" name="product_id" value="{{ $product->id }}">
+                    <div class="quantity-container">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" name="quantity" value="1" min="1" id="quantity" class="quantity-input">
+                    </div>
+                    <button type="submit" class="add-to-cart-btn">Add to Cart</button>
+                </form>
+            </div>
+        </div>
     </div>
-@endforeach
 
+    <!-- Секция с отзывами -->
+    <div class="reviews-section">
+        <h2>Reviews:</h2>
+        @foreach($product->reviews as $review)
+            <div class="review-card">
+                <strong>{{ $review->user->name }}</strong> rated <span class="review-rating">{{ $review->rating }} Stars</span>
+                <p class="review-comment">{{ $review->comment }}</p>
+                <small class="review-date">Posted on {{ $review->created_at->format('d M Y') }}</small>
+            </div>
+        @endforeach
 
-@if(auth()->check())
-    <form action="{{ route('reviews.store', $product->id) }}" method="POST">
-        @csrf
-        <label for="rating">Rating:</label>
-        <select name="rating" id="rating" class="rating" required>
-            @for ($i = 1; $i <= 5; $i++)
-                <option value="{{ $i }}">{{ $i }} Star{{ $i > 1 ? 's' : '' }}</option>
-            @endfor
-        </select>
-
-        <label for="comment">Comment:</label>
-        <textarea name="comment" id="comment" rows="3" required></textarea>
-
-        <button type="submit">Submit Review</button>
-    </form>
-@endif
-
-
+        @if(auth()->check())
+            <form action="{{ route('reviews.store', $product->id) }}" method="POST" class="review-form">
+                @csrf
+                <div class="form-group">
+                    <label for="rating">Rating:</label>
+                    <select name="rating" id="rating" class="rating" required>
+                        @for ($i = 1; $i <= 5; $i++)
+                            <option value="{{ $i }}">{{ $i }} Star{{ $i > 1 ? 's' : '' }}</option>
+                        @endfor
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="comment">Comment:</label>
+                    <textarea name="comment" id="comment" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="submit-review-btn">Submit Review</button>
+            </form>
+        @endif
+    </div>
 </div>
 @endsection

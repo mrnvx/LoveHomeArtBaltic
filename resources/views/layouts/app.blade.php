@@ -71,19 +71,18 @@
             <div class="footer-column">
                 <h3>Company</h3>
                 <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Our Services</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Affiliate Program</a></li>
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="{{ route('contact.index') }}">Contact</a></li>
+                    <li><a href="https://www.etsy.com/shop/LoveHomeArtBaltic?ref=l2-about-shopname&from_page=listing&section_id=1">Etsy</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h3>Get Help</h3>
                 <ul>
-                    <li><a href="#">FAQ</a></li>
                     <li><a href="#">Shipping</a></li>
                     <li><a href="#">Returns</a></li>
-                    <li><a href="#">Order Status</a></li>
+                    <li><a href="{{ route('orders') }}">Order Status</a></li>
                     <li><a href="#">Payment Options</a></li>
                 </ul>
             </div>

@@ -5,27 +5,31 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-<div class="container">
-    <h1>My Order History</h1>
+<div class="order-history-container">
+    <h1 class="order-history-title">My Order History</h1>
 
     @if($orders->isEmpty())
-        <p>You have not placed any orders yet.</p>
+        <p class="no-orders-message">You have not placed any orders yet.</p>
     @else
         @foreach($orders as $order)
-            <div class="order">
-                <h2>Order #{{ $order->id }}</h2>
-                <p>Status: {{ ucfirst($order->status) }}</p>
-                <p>Total Price: ${{ $order->total_price }}</p>
-                <ul>
+            <div class="order-card">
+                <h2 class="order-card-title">Order #{{ $order->id }}</h2>
+                <p class="order-status">Status: <span class="status-{{ strtolower($order->status) }}">{{ ucfirst($order->status) }}</span></p>
+                
+                <ul class="order-items-list">
                     @foreach($order->items as $item)
-                        <li>
-                            {{ $item->product->name }} - Quantity: {{ $item->quantity }} - Subtotal: ${{ $item->total_price }}
+                        <li class="order-item">
+                            <p class="item-name">{{ $item->product->name }}</p> 
+                            <p class="item-quantity">Quantity: {{ $item->quantity }}</p>
                         </li>
                     @endforeach
                 </ul>
-                <p>Ordered on: {{ $order->created_at->format('d M Y') }}</p>
+                <p class="order-total">Total Price: <strong>${{ $order->total_price }}</strong></p>
+
+                <p class="order-date">Ordered on: {{ $order->created_at->format('d M Y') }}</p>
             </div>
         @endforeach
     @endif
 </div>
 @endsection
+
