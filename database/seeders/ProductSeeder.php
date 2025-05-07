@@ -9,6 +9,12 @@ class ProductSeeder extends Seeder
 {
     public function run()
     {
-        Product::factory()->count(10)->create(); 
+        Product::create([
+            'name' => 'vel',
+            'description' => 'Testa driftwood pardosana',
+            'price' => 20.16,
+            'image' => 'images/drift.png',
+            'category_id' => 1, 
+        ]);
     }
 }

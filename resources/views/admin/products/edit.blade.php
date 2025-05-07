@@ -12,6 +12,18 @@
         @csrf
         @method('PUT')
 
+        <div class="new-form-group">
+            <label for="category_id" class="new-form-label">Kategorija</label>
+            <select name="category_id" id="category_id" required>
+                @foreach ($categories as $category)
+                    <option value="{{ $category->id }}"
+                        {{ old('category_id', $product->category_id) == $category->id ? 'selected' : '' }}>
+                        {{ $category->name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+
         <div class="edit-form-group">
             <label for="name" class="edit-form-label">Product Name</label>
             <input type="text" name="name" id="name" class="edit-form-input" value="{{ $product->name }}" required>

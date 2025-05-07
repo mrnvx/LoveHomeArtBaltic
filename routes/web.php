@@ -74,4 +74,6 @@ Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.s
 
 Route::post('/products/{product}/reviews', [ReviewController::class, 'store'])->name('reviews.store');
 
+Route::get('/category/{id}', [ProductController::class, 'filterByCategory'])->name('category.filter');
+
 

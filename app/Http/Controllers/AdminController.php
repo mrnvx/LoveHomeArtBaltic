@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
     public function create()
     {
-        return view('admin.products.create');
+        $categories = Category::all();
+        return view('admin.products.create', compact('categories'));
     }
 
     public function store(Request $request)
@@ -19,9 +22,10 @@ class AdminController extends Controller
             'price' => 'required|numeric',
             'description' => 'nullable|string',
             'image' => 'nullable|image',
+            'category_id' => 'required|exists:categories,id',
         ]);
 
-        $data = $request->only(['name', 'price', 'description']);
+        $data = $request->only(['name', 'price', 'description', 'category_id']);
 
         if ($request->hasFile('image')) {
             $data['image'] = $request->file('image')->store('products', 'public');
@@ -34,7 +38,8 @@ class AdminController extends Controller
 
     public function edit(Product $product)
     {
-        return view('admin.products.edit', compact('product'));
+    $categories = Category::all();
+    return view('admin.products.edit', compact('product', 'categories'));
     }
 
 
@@ -45,13 +50,14 @@ class AdminController extends Controller
             'price' => 'required|numeric',
             'description' => 'nullable|string',
             'image' => 'nullable|image',
+            'category_id' => 'required|exists:categories,id',
         ]);
 
-        $data = $request->only(['name', 'price', 'description']);
+        $data = $request->only(['name', 'price', 'description', 'category_id']);
 
         if ($request->hasFile('image')) {
             if ($product->image) {
-                \Storage::disk('public')->delete($product->image);
+                Storage::disk('public')->delete($product->image);
             }
             $data['image'] = $request->file('image')->store('products', 'public');
         }
@@ -65,7 +71,7 @@ class AdminController extends Controller
     public function destroy(Product $product)
     {
         if ($product->image) {
-            \Storage::disk('public')->delete($product->image);
+            Storage::disk('public')->delete($product->image);
         }
 
         $product->delete();

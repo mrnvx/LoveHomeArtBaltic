@@ -9,7 +9,7 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'description', 'price', 'image'];
+    protected $fillable = ['name', 'description', 'price', 'image', 'category_id'];
 
     public function carts()
     {
@@ -29,5 +29,11 @@ class Product extends Model
 {
     return $this->hasMany(Review::class);
 }
+
+public function category()
+{
+    return $this->belongsTo(Category::class);
+}
+
 
 }

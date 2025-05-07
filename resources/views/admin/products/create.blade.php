@@ -12,6 +12,15 @@
         @csrf
 
         <div class="new-form-group">
+            <label for="category_id" class="new-form-label">Kategorija</label>
+                <select name="category_id" id="category_id" required>
+                 @foreach ($categories as $category)
+                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                @endforeach
+            </select>
+        </div>
+
+        <div class="new-form-group">
             <label for="name" class="new-form-label">Product Name</label>
             <input type="text" name="name" id="name" class="new-form-input" placeholder="Enter product name" required>
         </div>

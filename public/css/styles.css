@@ -1010,7 +1010,6 @@ body {
     background-color: #218838;
 }
 
-/* Основной контейнер */
 .show-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -1018,7 +1017,6 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
-/* Структура страницы продукта */
 .product-page {
     display: flex;
     gap: 20px;
@@ -1026,7 +1024,6 @@ body {
     flex-wrap: wrap;
 }
 
-/* Левая часть с изображением */
 .product-left {
     flex: 1;
     max-width: 50%;
@@ -1039,7 +1036,6 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Правая часть с информацией */
 .product-right {
     flex: 1;
     max-width: 50%;
@@ -1067,7 +1063,7 @@ body {
     font-size: 1.5rem;
     margin-bottom: 20px;
 }
-/* Форма добавления в корзину */
+
 .add-to-cart-form {
     display: flex;
     flex-direction: column;
@@ -1104,7 +1100,6 @@ body {
     background-color: #d89a9a;
 }
 
-/* Секция отзывов */
 .reviews-section {
     margin-top: 40px;
 }
@@ -1138,7 +1133,6 @@ body {
     color: #666;
 }
 
-/* Форма добавления отзыва */
 .review-form {
     margin: 20px;
     padding: 20px;
@@ -1182,7 +1176,6 @@ body {
     background-color: #da9494;
 }
 
-/* Основной контейнер */
 .new-product-container {
     max-width: 600px;
     margin: 40px auto;
@@ -1193,7 +1186,6 @@ body {
     font-family: "Arial", sans-serif;
 }
 
-/* Заголовок страницы */
 .new-product-title {
     font-size: 1.8rem;
     text-align: center;
@@ -1201,12 +1193,10 @@ body {
     color: #333;
 }
 
-/* Группы формы */
 .new-form-group {
     margin-bottom: 15px;
 }
 
-/* Метки (labels) */
 .new-form-label {
     display: block;
     margin-bottom: 8px;
@@ -1215,7 +1205,6 @@ body {
     color: #555;
 }
 
-/* Поля ввода */
 .new-form-input {
     width: 100%;
     padding: 10px;
@@ -1231,7 +1220,6 @@ body {
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-/* Текстовые области */
 .new-form-textarea {
     width: 100%;
     padding: 10px;
@@ -1248,12 +1236,10 @@ body {
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-/* Действия формы */
 .new-form-actions {
     text-align: center;
 }
 
-/* Кнопка сохранения */
 .new-save-btn {
     display: inline-block;
     padding: 10px 20px;
@@ -1271,7 +1257,6 @@ body {
     background-color: #da9494;
 }
 
-/* Основной контейнер */
 .edit-product-container {
     max-width: 600px;
     margin: 0 auto;
@@ -1282,7 +1267,6 @@ body {
     font-family: "Arial", sans-serif;
 }
 
-/* Заголовок страницы */
 .edit-product-title {
     font-size: 1.8rem;
     text-align: center;
@@ -1290,12 +1274,10 @@ body {
     color: #333;
 }
 
-/* Группы формы */
 .edit-form-group {
     margin-bottom: 15px;
 }
 
-/* Метки (labels) */
 .edit-form-label {
     display: block;
     margin-bottom: 8px;
@@ -1304,7 +1286,6 @@ body {
     color: #555;
 }
 
-/* Поля ввода */
 .edit-form-input {
     width: 100%;
     padding: 10px;
@@ -1320,7 +1301,6 @@ body {
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-/* Текстовые области */
 .edit-form-textarea {
     width: 100%;
     padding: 10px;
@@ -1337,12 +1317,10 @@ body {
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-/* Действия формы */
 .edit-form-actions {
     text-align: center;
 }
 
-/* Кнопка обновления */
 .edit-update-btn {
     display: inline-block;
     padding: 10px 20px;
@@ -1360,7 +1338,6 @@ body {
     background-color: #da9494;
 }
 
-/* Основной контейнер */
 .order-history-container {
     max-width: 800px;
     margin: 40px auto;
@@ -1371,7 +1348,6 @@ body {
     font-family: "Arial", sans-serif;
 }
 
-/* Заголовок страницы */
 .order-history-title {
     font-size: 2rem;
     text-align: center;
@@ -1379,14 +1355,12 @@ body {
     color: #343a40;
 }
 
-/* Сообщение об отсутствии заказов */
 .no-orders-message {
     text-align: center;
     font-size: 1.2rem;
     color: #6c757d;
 }
 
-/* Карточка заказа */
 .order-card {
     background-color: #ffffff;
     border: 1px solid #e9ecef;
@@ -1396,7 +1370,6 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-/* Заголовок карточки */
 .order-card-title {
     font-size: 1.5rem;
     margin-bottom: 10px;
@@ -1405,7 +1378,6 @@ body {
     padding-bottom: 5px;
 }
 
-/* Статус заказа */
 .order-status {
     font-size: 1rem;
     margin-bottom: 10px;
@@ -1424,7 +1396,6 @@ body {
     color: #dc3545;
 }
 
-/* Итоговая сумма заказа */
 .order-total {
     font-size: 1.2rem;
     margin-bottom: 10px;
@@ -1432,7 +1403,6 @@ body {
     color: #343a40;
 }
 
-/* Список товаров */
 .order-items-list {
     list-style: none;
     padding: 0;
@@ -1455,14 +1425,12 @@ body {
     color: #6c757d;
 }
 
-/* Дата заказа */
 .order-date {
     font-size: 0.9rem;
     color: #6c757d;
     text-align: right;
 }
 
-/* Контейнер страницы */
 .orders-container {
     max-width: 1000px;
     margin: 40px auto;
@@ -1473,7 +1441,6 @@ body {
     font-family: "Arial", sans-serif;
 }
 
-/* Заголовок страницы */
 .orders-title {
     font-size: 2rem;
     text-align: center;
@@ -1481,7 +1448,6 @@ body {
     color: #343a40;
 }
 
-/* Таблица заказов */
 .orders-table {
     width: 100%;
     border-collapse: collapse;
@@ -1521,7 +1487,6 @@ body {
     cursor: pointer;
 }
 
-/* Форма изменения статуса */
 .status-form {
     display: flex;
     align-items: center;

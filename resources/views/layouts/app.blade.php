@@ -28,10 +28,10 @@
                     <a href="#" class="dropbtn">SHOP</a>
                     <div class="dropdown-content">
                     <a href="/shop">All products</a>
-                    <a href="#">Driftwood</a>
-                    <a href="#">Stones</a>
-                    <a href="#">Clocks</a>
-                    <a href="#">Lamps</a>
+                    <a href="{{ route('category.filter', 1) }}">Driftwood</a>
+                    <a href="{{ route('category.filter', 2) }}">Stones</a>
+                    <a href="{{ route('category.filter', 3) }}">Clocks</a>
+                    <a href="{{ route('category.filter', 4) }}">Lamps</a>
                 </div>
             </div>
                 <a href="/about">ABOUT</a>
@@ -89,10 +89,10 @@
             <div class="footer-column">
                 <h3>Online Shop</h3>
                 <ul>
-                    <li><a href="#">Driftwood</a></li>
-                    <li><a href="#">Stones</a></li>
-                    <li><a href="#">Lamps</a></li>
-                    <li><a href="#">Clocks</a></li>
+                    <li><a href="{{ route('category.filter', 1) }}">Driftwood</a></li>
+                    <li><a href="{{ route('category.filter', 2) }}">Stones</a></li>
+                    <li><a href="{{ route('category.filter', 4) }}">Lamps</a></li>
+                    <li><a href="{{ route('category.filter', 3) }}">Clocks</a></li>
                 </ul>
             </div>
             <div class="footer-column follow-us">

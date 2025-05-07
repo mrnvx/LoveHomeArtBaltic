@@ -15,6 +15,24 @@
     @endif
 
     <div class="product-grid">
+    <form method="GET" action="{{ route('shop.index') }}">
+        
+    <input type="number" name="price_min" placeholder="Min cena" value="{{ request('price_min') }}">
+    <input type="number" name="price_max" placeholder="Max cena" value="{{ request('price_max') }}">
+
+    <select name="sort">
+    <option value="">Sort by</option>
+        <option value="price_asc" {{ request('sort') == 'price_asc' ? 'selected' : '' }}>Cena ↑</option>
+        <option value="price_desc" {{ request('sort') == 'price_desc' ? 'selected' : '' }}>Cena ↓</option>
+        <option value="newest" {{ request('sort') == 'newest' ? 'selected' : '' }}>Jaunākie</option>
+    </select>
+   
+
+    <button type="submit">Filtrēt</button>
+    <a href="{{ route('shop.index') }}">Notīrīt filtrus</a>
+    </form>
+    <p>Kopā produkti: {{ $products->total() }}</p>
+
         @foreach($products as $product)
             <div class="product-card">
                 <a href="{{ route('shop.show', $product->id) }}">
