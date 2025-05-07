@@ -1172,6 +1172,15 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
+.review-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
 .submit-review-btn:hover {
     background-color: #da9494;
 }

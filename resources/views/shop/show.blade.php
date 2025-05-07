@@ -45,6 +45,8 @@
         <h2>Reviews:</h2>
         @foreach($product->reviews as $review)
             <div class="review-card">
+            <img src="{{ $review->user->profile_picture ? asset('storage/' . $review->user->profile_picture) : asset('images/default-avatar.png') }}"
+            alt="{{ $review->user->name }}" class="review-avatar">
                 <strong>{{ $review->user->name }}</strong> rated <span class="review-rating">{{ $review->rating }} Stars</span>
                 <p class="review-comment">{{ $review->comment }}</p>
                 <small class="review-date">Posted on {{ $review->created_at->format('d M Y') }}</small>
