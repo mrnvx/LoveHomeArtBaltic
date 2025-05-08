@@ -20,7 +20,7 @@
         </div>
         <div class="main-header">
             <div class="logo">
-                <a href="/home"><img src="images/logo_love.png" alt="Logo"></a>
+                <a href="/home"><img src="/images/logo_love.png" alt="Logo"></a>
             </div>
             <nav class="nav-menu">
                     <a href="/home">HOME</a>
@@ -51,11 +51,11 @@
                         value="{{ request('query') }}" 
                         class="search-input"
                     >
-                    <img src="images/search.svg'" alt="Search" class="search-icon">
+                    <img src="/images/search.svg" alt="Search" class="search-icon">
             </form>
          </div>
-                <a id="user-icon" href="#"><img src="images/user.svg" alt="User"></a>
-                <a href="{{ route('cart.index') }}"><img src="images/cart.svg" alt="Cart" class="cart-icon"></a>
+                <a id="user-icon" href="#"><img src="/images/user.svg" alt="User"></a>
+                <a href="{{ route('cart.index') }}"><img src="/images/cart.svg" alt="Cart" class="cart-icon"></a>
             </div>
         </div>
     </header>
@@ -98,7 +98,7 @@
             <div class="footer-column follow-us">
                 <h3>Follow Us</h3>
                 <div class="social-icons">
-                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.instagram.com/lovehomeartbaltic?igsh=MWVnYjY2aXZzdGJtZQ=="><i class="fa-brands fa-instagram"></i></a>
                 <a href="https://www.etsy.com/shop/LoveHomeArtBaltic"><i class="fa-brands fa-etsy"></i></a>
                 </div>
             </div>

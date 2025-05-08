@@ -25,7 +25,14 @@
                     <label for="payment_method" class="form-label">Payment Method:</label>
                     <select name="payment_method" id="payment_method" class="form-select" required>
                         <option value="credit_card">Credit Card</option>
-                        <option value="paypal">PayPal</option>
+                        <option value="paypal">PayPal</option> 
+                        <option value="paypal">Visa</option>
+                        <option value="master_card">Master Card</option>
+                        <option value="apple_pay">Apple Pay</option>
+                        <option value="google_pay">Google Pay</option>
+                        <option value="maestro_card">Maestro Card</option>
+                        <option value="stripe">Stripe</option>
+                        <option value="amazon_pay">Amazon Pay</option>
                     </select>
                 </div>
                 <button type="submit" class="checkout-btn">Place Order</button>

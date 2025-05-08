@@ -14,29 +14,36 @@
         </div>
     @endif
 
+    
+    <form method="GET" action="{{ route('shop.index') }}" class="filter-bar">
+    <div class="filter-left">
+        <span class="filter-label">Filter:</span>
+
+        <input type="number" name="price_min" placeholder="Min cena" value="{{ request('price_min') }}" class="filter-input">
+        <input type="number" name="price_max" placeholder="Max cena" value="{{ request('price_max') }}" class="filter-input">
+
+        <select name="sort" class="filter-select">
+            <option value="">Sort by</option>
+            <option value="price_asc" {{ request('sort') == 'price_asc' ? 'selected' : '' }}>Cena ↑</option>
+            <option value="price_desc" {{ request('sort') == 'price_desc' ? 'selected' : '' }}>Cena ↓</option>
+            <option value="newest" {{ request('sort') == 'newest' ? 'selected' : '' }}>Jaunākie</option>
+        </select>
+
+        <button type="submit" class="filter-button">Filtrēt</button>
+        <a href="{{ route('shop.index') }}" class="clear-filter">Notīrīt</a>
+    </div>
+
+    <div class="filter-right">
+
+    
+        <span>Kopā produkti: {{ $products->total() }}</span>
+    </div>
+</form>
     <div class="product-grid">
-    <form method="GET" action="{{ route('shop.index') }}">
-        
-    <input type="number" name="price_min" placeholder="Min cena" value="{{ request('price_min') }}">
-    <input type="number" name="price_max" placeholder="Max cena" value="{{ request('price_max') }}">
-
-    <select name="sort">
-    <option value="">Sort by</option>
-        <option value="price_asc" {{ request('sort') == 'price_asc' ? 'selected' : '' }}>Cena ↑</option>
-        <option value="price_desc" {{ request('sort') == 'price_desc' ? 'selected' : '' }}>Cena ↓</option>
-        <option value="newest" {{ request('sort') == 'newest' ? 'selected' : '' }}>Jaunākie</option>
-    </select>
-   
-
-    <button type="submit">Filtrēt</button>
-    <a href="{{ route('shop.index') }}">Notīrīt filtrus</a>
-    </form>
-    <p>Kopā produkti: {{ $products->total() }}</p>
-
         @foreach($products as $product)
             <div class="product-card">
                 <a href="{{ route('shop.show', $product->id) }}">
-                    <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="product-image">
+                    <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="card-image">
                 </a>
                 <div class="product-details">
                     <h2 class="product-name">{{ $product->name }}</h2>
@@ -56,6 +63,9 @@
                 </div>
             </div>
         @endforeach
+            <div class="pagination-wrapper">
+            {{ $products->links('pagination.custom') }}
+            </div>
+        </div>
     </div>
-</div>
 @endsection

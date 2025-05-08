@@ -907,6 +907,8 @@ body {
 }
 
 .product-card {
+    width: 290px;
+    height: 420px;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     background-color: #fff;
@@ -1002,12 +1004,12 @@ body {
 }
 
 .add-product-btn .button {
-    background-color: #28a745;
+    background-color: #d9a4a4;
     font-size: 1rem;
 }
 
 .add-product-btn .button:hover {
-    background-color: #218838;
+    background-color: #dd9797;
 }
 
 .show-container {
@@ -1034,6 +1036,21 @@ body {
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .product-right {
@@ -1807,4 +1824,104 @@ body {
 
 .order-total span {
     color: #28a745;
+}
+
+/* Filter */
+
+.filter-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+}
+
+.filter-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    font-family: "Poppins", sans-serif;
+}
+
+.filter-label {
+    font-weight: 500;
+    margin-right: 5px;
+}
+
+.filter-input,
+.filter-select {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    min-width: 100px;
+    font-family: "Poppins", sans-serif;
+}
+
+.filter-button {
+    padding: 6px 12px;
+    background-color: #d9a4a4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+}
+
+.filter-button:hover {
+    background-color: #d39090;
+}
+
+.clear-filter {
+    color: #888;
+    text-decoration: underline;
+    font-size: 13px;
+}
+
+.clear-filter:hover {
+    color: #000;
+}
+
+.filter-right {
+    font-weight: 400;
+    color: #555;
+}
+
+/* Custom pagination */
+
+.custom-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.custom-pagination__item {
+    padding: 8px 12px;
+    background-color: #f5f5f5;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.custom-pagination__item:hover {
+    background-color: #e0e0e0;
+}
+
+.custom-pagination__item.active {
+    background-color: #d9a4a4;
+    color: white;
+}
+
+.custom-pagination__item.disabled {
+    background-color: #ddd;
+    color: #999;
+    pointer-events: none;
 }
