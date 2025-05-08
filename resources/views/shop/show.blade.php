@@ -28,7 +28,7 @@
                 <p class="product-price">Price: 
                     <span style="text-decoration: line-through;">{{ $product->price }} €</span>
                     <strong>
-                        {{ $product->price * (1 - $product->discount / 100) }} €
+                    {{ number_format($product->price * (1 - $product->discount / 100), 2) }} €
                     </strong>
                 </p>
             @else

@@ -54,8 +54,9 @@
                     <h2 class="product-name">{{ $product->name }}</h2>
             @if($product->discount)
                 <p class="product-price">
-                    <span style="text-decoration: line-through;">{{ $product->price }} €</span>
-                        {{ $product->price * (1 - $product->discount / 100) }} €
+                    <span style="text-decoration: line-through; ">Price:  {{ $product->price }} €</span>
+                    <br>
+                    {{ number_format($product->price * (1 - $product->discount / 100), 2) }} €
     
                 </p>
             @else
