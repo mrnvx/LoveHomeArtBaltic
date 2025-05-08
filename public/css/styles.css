@@ -915,6 +915,7 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
 }
 
 .product-card:hover {
@@ -931,6 +932,20 @@ body {
 
 .product-card:hover .product-image {
     transform: scale(1.05);
+}
+
+.discount-badge {
+    position: absolute;
+    background-color: #e53935;
+    color: white;
+    font-weight: bold;
+    padding: 6px 10px;
+    top: 10px;
+    left: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    z-index: 10;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 /* Details */

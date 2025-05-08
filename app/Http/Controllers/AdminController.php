@@ -23,9 +23,10 @@ class AdminController extends Controller
             'description' => 'nullable|string',
             'image' => 'nullable|image',
             'category_id' => 'required|exists:categories,id',
+            'discount' => 'nullable|numeric|min:0|max:100',
         ]);
 
-        $data = $request->only(['name', 'price', 'description', 'category_id']);
+        $data = $request->only(['name', 'price', 'description', 'category_id', 'discount']);
 
         if ($request->hasFile('image')) {
             $data['image'] = $request->file('image')->store('products', 'public');
@@ -51,9 +52,17 @@ class AdminController extends Controller
             'description' => 'nullable|string',
             'image' => 'nullable|image',
             'category_id' => 'required|exists:categories,id',
+            'discount' => 'nullable|numeric|min:0|max:100',
         ]);
 
-        $data = $request->only(['name', 'price', 'description', 'category_id']);
+        $data = $request->only(['name', 'price', 'description', 'category_id', 'discount']);
+
+        if ($request->has('remove_discount')) {
+            $data['discount'] = null;
+        } else {
+            $data['discount'] = $request->discount;
+        }
+    
 
         if ($request->hasFile('image')) {
             if ($product->image) {

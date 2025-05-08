@@ -14,7 +14,7 @@
 
         <div class="new-form-group">
             <label for="category_id" class="new-form-label">Kategorija</label>
-            <select name="category_id" id="category_id" required>
+            <select name="category_id" id="category_id" class="edit-form-input" required>
                 @foreach ($categories as $category)
                     <option value="{{ $category->id }}"
                         {{ old('category_id', $product->category_id) == $category->id ? 'selected' : '' }}>
@@ -30,7 +30,7 @@
         </div>
 
         <div class="edit-form-group">
-            <label for="price" class="edit-form-label">Price ($)</label>
+            <label for="price" class="edit-form-label">Price (€)</label>
             <input type="number" name="price" id="price" class="edit-form-input" step="0.01" value="{{ $product->price }}" required>
         </div>
 
@@ -42,6 +42,16 @@
         <div class="edit-form-group">
             <label for="image" class="edit-form-label">Update Image</label>
             <input type="file" name="image" id="image" class="edit-form-input">
+        </div>
+
+         <div class="edit-form-group">
+            <label for="discount" class="edit-form-label">Discount (%)</label>
+            <input type="number" name="discount" id="discount" class="edit-form-input" value="{{ old('discount', $product->discount) }}" step="0.01" min="0" max="100">
+
+            <div style="margin-top: 5px;">
+                <input type="checkbox" name="remove_discount" id="remove_discount" value="1">
+                <label for="remove_discount">Remove discount</label>
+            </div>
         </div>
 
         <div class="edit-form-actions">

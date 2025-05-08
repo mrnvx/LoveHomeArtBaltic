@@ -24,9 +24,16 @@
                         All orders are carefully packed, have a tracking number and are easy to track within the EU: 17track.net or track-trace.com/post.
                     USA: USPS.com.
                 </p>
-                <p class="product-price"><strong>Price:</strong> ${{ number_format($product->price, 2) }}</p>
-
-                
+                @if($product->discount)
+                <p class="product-price">Price: 
+                    <span style="text-decoration: line-through;">{{ $product->price }} €</span>
+                    <strong>
+                        {{ $product->price * (1 - $product->discount / 100) }} €
+                    </strong>
+                </p>
+            @else
+                <p class="product-price">Price: €{{ number_format($product->price, 2) }}</p>
+            @endif
 
                 <form action="{{ route('cart.store') }}" method="POST" class="add-to-cart-form">
                     @csrf
