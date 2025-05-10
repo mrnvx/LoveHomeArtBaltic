@@ -81,8 +81,8 @@
             <div class="footer-column">
                 <h3>Get Help</h3>
                 <ul>
-                    <li><a href="#">Shipping</a></li>
-                    <li><a href="#">Returns</a></li>
+                    <li><a href="{{ route('contact.index') }}">Custom Order Request</a></li>
+                    <li><a href="{{ route('cart.index') }}">Cart</a></li>
                     <li><a href="{{ route('orders') }}">Order Status</a></li>
                     <li><a href="#">Payment Options</a></li>
                 </ul>

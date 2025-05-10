@@ -24,7 +24,7 @@
 
     <div class="contact-form">
         <h2>Send your message!</h2>
-        <p>Contact us if you have any questions, suggestions, or want to learn more about the product!</p>
+        <p>Contact us if you have any questions, suggestions, or want to learn more about the product! Also u can request a custom order!</p>
         
         @if(Session::has('msg'))
             <div class="alert">
